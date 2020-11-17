@@ -133,4 +133,13 @@ function reloadFunc(x) {
 }
 reloadFunc(4567890);
 reloadFunc('renjialun');
-// 987654   nulaijner
+/*
+
+    -----------
+    987654
+    number
+    -----------
+    nulaijner
+    string
+
+*/
