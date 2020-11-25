@@ -84,7 +84,7 @@ var Parent = /** @class */ (function () {
     }
     Parent.prototype.run = function () {
         return this.name + " \u5728\u8FD0\u52A8 ---- private";
-        // protected 类 内部访问 √
+        // private 类 内部访问 √
     };
     return Parent;
 }());

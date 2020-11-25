@@ -71,7 +71,7 @@ class Parent{
     }
     run(): string{
         return `${this.name} 在运动 ---- private`
-        // protected 类 内部访问 √
+        // private 类 内部访问 √
     }
 }
 class Child extends Parent{
