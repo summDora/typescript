@@ -20,7 +20,7 @@ ts中的接口类似于java，同时增加了更灵活的接口类型
 
 // 对传入的json参数进行约束
 
-function print(labelform: { label: string }) :void{ }
+function print(labelform: { label: string }): void { }
 
 print('hhh') //错误写法
 
@@ -28,7 +28,7 @@ print({ name: 'hhhh' })  //错误写法
 
 print({ label: 123 })  //错误写法
 
-print({label:'123'})  //正确写法
+print({ label: '123' })  //正确写法
 
 // 对批量方法传入参数进行约束
 
@@ -38,12 +38,12 @@ print({label:'123'})  //正确写法
     // 必须传入对象 firstName secondName
 } */
 
-interface FullName{
+interface FullName {
     firstName: string;  //分号结束
     secondName: string;
 }
 
-function printName(name:FullName) {
+function printName(name: FullName) {
     // 必须传入对象 firstName secondName
     console.log(`${name.firstName}---${name.secondName}`)
 }
@@ -69,7 +69,7 @@ printAnimal({ firstName: 'big', secondName: 'cat' })
 
 // 接口：可选属性
 
-interface Config{
+interface Config {
     type: string;
     url: string;
     data?: any;  //可选属性 data可传可不传
@@ -89,10 +89,10 @@ function ajax(config: Config) {
             } else {
                 console.log(xhr.responseText)
             }
-
         }
     }
 }
+
 // ajax({
 //     type: 'get',
 //     url: 'https://www.baidu.com',
@@ -108,17 +108,17 @@ function ajax(config: Config) {
 
 // 加密的函数类型接口
 
-interface encrypt{
+interface encrypt {
     (key: string, value: string): string;
     // 传入两个 string 类型的参数 返回一个string类型的值
 }
 
-var md5: encrypt = function (key: string, value: string): string{
-    return key+value
+var md5: encrypt = function (key: string, value: string): string {
+    return key + value
 }
 console.log(md5('namestring', 'valuestring'))
 
-var hanshu: encrypt = function (one: string, sec: string): string{
+var hanshu: encrypt = function (one: string, sec: string): string {
     return `${one}-----${sec}`
 }
 console.log(hanshu('namestring', 'valuestring'))
@@ -136,7 +136,7 @@ var arr1: number[] = [1, 2, 3, 4]
 var arr2: Array<string> = ['1', '2', '3', '4']
 
 // 数组的约束
-interface UserArr{
+interface UserArr {
     [index: number]: string;
 }
 
@@ -144,12 +144,12 @@ var arr3: UserArr = ['1', '2', '3', '4']
 console.log(arr3[2])     //3
 // 正确写法
 
-var arr4:UserArr=[1,2,3,4]
+var arr4: UserArr = [1, 2, 3, 4]
 // 错误写法  所需类型来自此索引签名
 
 
 // 对象的约束
-interface UserObj{
+interface UserObj {
     [index: string]: string;
 }
 var userobj: UserObj = { name: 'ren', nickname: 'guochao' }
@@ -160,30 +160,30 @@ console.log(userobj)
 
 // 4.类类型接口   -------对 类的约束  和 抽象类 相似
 
-interface Animals{
+interface Animals {
     name: string;
     eat(str: string): void;
 }
 
-class Dogs implements Animals{
+class Dogs implements Animals {
     // 类型 "Dogs" 中缺少属性 "eat"，但类型 "Animals" 中需要该属性
     // 错误写法
     name: string;
     constructor(name: string) {
-        this.name=name
+        this.name = name
     }
 }
-class Cats implements Animals{
+class Cats implements Animals {
     // 类型 "Cats" 中缺少属性 "name"，但类型 "Animals" 中需要该属性
     // 错误写法
     eat() { }
     // 可以不传参 但是方法得有
 }
-class Fishes implements Animals{
+class Fishes implements Animals {
     // 正确写法 name 和 eat 都存在
     name: string;
     constructor(name: string) {
-        this.name=name
+        this.name = name
     }
     eat(food: string) {
         console.log(`${this.name} 吃 ${food}`)

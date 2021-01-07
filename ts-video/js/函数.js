@@ -91,6 +91,7 @@ console.log(getInfo(20));
 // my name is : 张三
 // my age is : 20
 // console.log(getInfo(true));
+//   报错说明：
 //   没有与此调用匹配的重载。
 //   第 1 个重载(共 2 个)，“(name: string): string”，出现以下错误。
 //   类型“boolean”的参数不能赋给类型“string”的参数。

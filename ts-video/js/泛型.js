@@ -95,4 +95,23 @@ stringList.add('a');
 stringList.add('c');
 stringList.add('v');
 console.log(stringList.min()); //a
-// 泛型 在 做到了 类型校验 的同时 实现了功能
+var getConfig1 = function (v, b) {
+    return v + ':' + b;
+};
+console.log(getConfig1('name', '任嘉伦')); // name:任嘉伦
+var getConfig2 = function (v, b) {
+    return v + ':' + b;
+};
+console.log(getConfig2('name', '任嘉伦')); // name:任嘉伦
+console.log(getConfig2(123, 456)); // 123:456
+function getConfig3(v, b) {
+    return v + ' :---: ' + b;
+}
+var myGetConfig1 = getConfig3;
+console.log(myGetConfig1('name', '任嘉伦')); // name:任嘉伦
+var myGetConfig2 = getConfig3;
+console.log(myGetConfig2(123, 456)); // 123:456
+/*
+    name :---: 任嘉伦
+    123 :---: 456
+*/ 

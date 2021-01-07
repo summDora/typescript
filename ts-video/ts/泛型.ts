@@ -76,23 +76,23 @@ console.log(listArr.min()) */
 
 
 // 类的泛型
-class MinClass <T>{
+class MinClass<T>{
     public list: T[] = []
     add(num: T) {
         this.list.push(num)
     }
-    min(): T{
+    min(): T {
         let minNum = this.list[0]
         this.list.map(item => {
             if (item < minNum) {
-                minNum=item
+                minNum = item
             }
         })
         return minNum
     }
 }
 // 实例化类 并且制定了 类的T 代表的类型是 number
-let numList=new MinClass<number>()
+let numList = new MinClass<number>()
 numList.add(23)
 numList.add(30)
 numList.add(14)
@@ -110,3 +110,47 @@ stringList.add('v')
 console.log(stringList.min()); //a
 
 // 泛型 在 做到了 类型校验 的同时 实现了功能
+
+
+// 泛型接口
+
+// 函数类型接口
+interface Config1 {
+    (value1: string, value2: string): string
+}
+let getConfig1: Config1 = function (v: string, b: string): string {
+    return v + ':' + b
+}
+console.log(getConfig1('name', '任嘉伦')); // name:任嘉伦
+
+
+// 第一种 泛型接口的写法
+interface Config2 {
+    <T>(value1: T, value2: T): string
+}
+let getConfig2: Config2 = function <T>(v: T, b: T): string {
+    return v + ':' + b
+}
+console.log(getConfig2<string>('name', '任嘉伦')); // name:任嘉伦
+console.log(getConfig2<number>(123, 456));        // 123:456
+
+
+
+// 第二种 泛型接口 写法
+
+interface Config3<T> {
+    (value1: T, value2: T): string
+}
+function getConfig3<T>(v: T, b: T): string{
+    return v + ' :---: ' + b
+}
+let myGetConfig1:Config3<string>=getConfig3
+console.log(myGetConfig1('name', '任嘉伦')); // name:任嘉伦
+
+let myGetConfig2:Config3<number>=getConfig3
+console.log(myGetConfig2(123, 456));        // 123:456
+
+/*
+    name :---: 任嘉伦
+    123 :---: 456
+*/
