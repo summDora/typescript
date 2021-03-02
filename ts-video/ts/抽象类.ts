@@ -21,6 +21,7 @@
 //     abstract eat(): any
 // }
 // var a = new Animal_abstract()
+// 错误写法
 // 无法创建抽象类的实例
 
 

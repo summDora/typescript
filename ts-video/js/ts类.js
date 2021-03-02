@@ -77,6 +77,11 @@ var a = new Webs('继承任嘉伦');
 console.log(a);
 console.log(a.run());
 console.log(a.getName());
+console.log(a.work());
+// Webs { name: '继承任嘉伦' }
+// 继承任嘉伦 运动ing ~
+// 继承任嘉伦
+// 继承任嘉伦 在工作 ! ---father
 // ts中 继承的探讨 父类的方法 和 子类的方法一致
 var Second = /** @class */ (function (_super) {
     __extends(Second, _super);

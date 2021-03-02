@@ -52,6 +52,5 @@ var cat = new Cat('Tom');
 console.log(cat.eat());
 /*
     Haba吃粮食
-
     Tom吃小鱼
 */ 

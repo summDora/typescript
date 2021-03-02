@@ -55,9 +55,3 @@ console.log(B.apiUrl)
     [Function: classB]
     http://www.classb.apiurl
 */
-
-
-/*
-    疑问：
-    1.类装饰器 在 重载 类构造函数时 需要将类所有已存在的构造函数全部写进去么
-*/

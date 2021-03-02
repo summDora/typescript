@@ -25,6 +25,7 @@ var __extends = (this && this.__extends) || (function () {
 //     abstract eat(): any
 // }
 // var a = new Animal_abstract()
+// 错误写法
 // 无法创建抽象类的实例
 // abstract class Animal_abstract{
 //     abstract eat(): any
